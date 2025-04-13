@@ -21,6 +21,16 @@ function initialise() {
         }
     }
 
+    //Women's National League only switch filter
+    if (document.URL.indexOf('women') > -1) {
+        var bigleague = findGetParameter('women');
+        if (bigleague == 'Yes') {
+            myData = myData.filter(function(el) {
+                return el.league == 'Women\'s National League';
+            });
+        }
+    }    
+
     //National Teams only switch filter
     if (document.URL.indexOf('nationalteams') > -1) {
         var bigleague = findGetParameter('nationalteams');
@@ -59,7 +69,7 @@ function initialise() {
 
     // create the labeled tile layer with correct attribution
     var gsUrl = 'https://mt0.google.com/vt/lyrs=s&hl=vi&x={x}&y={y}&z={z}';
-    var gsAttrib = 'Map data &copy;2023 Google';
+    var gsAttrib = 'Map data &copy;2025 Google';
     var gs = new L.TileLayer(gsUrl, {
         minZoom: 0.5,
         maxZoom: 20,
@@ -68,7 +78,7 @@ function initialise() {
 
     var grUrl =
         'https://mt0.google.com/vt/lyrs=r&hl=vi&x={x}&y={y}&z={z}';
-    var grAttrib = 'Map data &copy;2023 Google';
+    var grAttrib = 'Map data &copy;2025 Google';
     var gr = new L.TileLayer(grUrl, {
         minZoom: 0.5,
         maxZoom: 20,
@@ -121,6 +131,7 @@ function initialise() {
         var seconddivisioncount = 0;
         var thirddivisioncount = 0;
         var nationalteamcount = 0;
+        var womencount = 0;
         var othercount = 0;
 
         //here we iterate through the array
@@ -150,6 +161,9 @@ function initialise() {
                 case 'National':
                     nationalteamcount++;
                     break;
+                case 'Women\'s National League':
+                    womencount++;
+                    break;
                 default:
                     othercount++;
             }
@@ -166,7 +180,7 @@ function initialise() {
                 myData[item].capacity +
                 '<br><b>Link:</b> ' +
                 '<a target="_blank" rel="noopener noreferrer" href=' + fb + '><img src="./Images/facebook.png" alt="fb" style="width:15px;height:15px;"></a>' + "  " +
-                '<a target="_blank" rel="noopener noreferrer" href=' + web + '><img src="./Images/world-wide-web.png" alt="fb" style="width:15px;height:15px;"></a>'
+                '<a target="_blank" rel="noopener noreferrer" href=' + web + '><img src="./Images/world-wide-web.png" alt="fb" style="width:15px;height:15px;"></a>' +
                 '</div>';
 
             //create and add markers and popups to map.
@@ -189,17 +203,19 @@ function initialise() {
                     'Second Division',
                     'Third Division',
                     'National Team',
+                    'Women\'s National League',
                     'Other'
                 ],
                 datasets: [
                     {
-                        backgroundColor: ['#2ecc71', '#3498db', '#95a5a6', '#9b59b6', '#f1c40f', '#e74c3c', '#34495e'],
+                        backgroundColor: ['#2ecc71', '#3498db', '#95a5a6', '#9b59b6', '#f1c40f', '#ffc0cb', '#e74c3c', '#34495e'],
                         data: [
                             vleague1count,
                             vleague2count,
                             seconddivisioncount,
                             thirddivisioncount,
                             nationalteamcount,
+                            womencount,
                             othercount
                         ]
                     }
