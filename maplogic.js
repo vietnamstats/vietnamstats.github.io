@@ -58,7 +58,7 @@ function initialise() {
     });
 
     // create the labeled tile layer with correct attribution
-    var gsUrl = 'http://mt0.google.com/vt/lyrs=s&hl=vi&x={x}&y={y}&z={z}';
+    var gsUrl = 'https://mt0.google.com/vt/lyrs=s&hl=vi&x={x}&y={y}&z={z}';
     var gsAttrib = 'Map data &copy;2023 Google';
     var gs = new L.TileLayer(gsUrl, {
         minZoom: 0.5,
@@ -67,7 +67,7 @@ function initialise() {
     });
 
     var grUrl =
-        'http://mt0.google.com/vt/lyrs=r&hl=vi&x={x}&y={y}&z={z}';
+        'https://mt0.google.com/vt/lyrs=r&hl=vi&x={x}&y={y}&z={z}';
     var grAttrib = 'Map data &copy;2023 Google';
     var gr = new L.TileLayer(grUrl, {
         minZoom: 0.5,

@@ -8,7 +8,7 @@ var allData = [
     "latitude": 21.02044731,
     "longitude": 105.7638188,
     "fb": "https://www.facebook.com/vietnamesefootball",
-    "web": "http://vff.org.vn/",
+    "web": "https://vff.org.vn/",
     "league": "National"
   },
   {
@@ -20,7 +20,7 @@ var allData = [
     "latitude": 10.97061250277609,
     "longitude": 106.6717396,
     "fb": "https://www.facebook.com/becamexbinhduongfc",
-    "web": "http://www.becamexbinhduongfc.com/",
+    "web": "https://www.becamexbinhduongfc.com/",
     "league": "V.League 1"
   },
   {
@@ -92,7 +92,7 @@ var allData = [
     "latitude": 18.333343687489286,
     "longitude": 105.90785187421314,
     "fb": "https://www.facebook.com/HongLinhHaTinhOfficial",
-    "web": "http://honglinhhatinhfc.com/",
+    "web": "https://honglinhhatinhfc.com/",
     "league": "V.League 1"
   },
   {
@@ -116,7 +116,7 @@ var allData = [
     "latitude": 18.66910975,
     "longitude": 105.6691464,
     "fb": "https://www.facebook.com/slnafc",
-    "web": "http://www.slnafc.com/",
+    "web": "https://www.slnafc.com/",
     "league": "V.League 1"
   },
   {
@@ -140,7 +140,7 @@ var allData = [
     "latitude": 15.999305073490977,
     "longitude": 108.22353396968828,
     "fb": "https://www.facebook.com/shbdanang.official",
-    "web": "http://shbdanangfc.com.vn/",
+    "web": "https://shbdanangfc.com.vn/",
     "league": "V.League 1"
   },
   {
@@ -503,7 +503,7 @@ var myData = [
         "latitude": 21.02044731,
         "longitude": 105.7638188,
         "fb": "https://www.facebook.com/vietnamesefootball",
-        "web": "http://vff.org.vn/",
+        "web": "https://vff.org.vn/",
         "league": "National"
       },
       {
@@ -515,7 +515,7 @@ var myData = [
         "latitude": 10.97061250277609,
         "longitude": 106.6717396,
         "fb": "https://www.facebook.com/becamexbinhduongfc",
-        "web": "http://www.becamexbinhduongfc.com/",
+        "web": "https://www.becamexbinhduongfc.com/",
         "league": "V.League 1"
       },
       {
@@ -587,7 +587,7 @@ var myData = [
         "latitude": 18.333343687489286,
         "longitude": 105.90785187421314,
         "fb": "https://www.facebook.com/HongLinhHaTinhOfficial",
-        "web": "http://honglinhhatinhfc.com/",
+        "web": "https://honglinhhatinhfc.com/",
         "league": "V.League 1"
       },
       {
@@ -611,7 +611,7 @@ var myData = [
         "latitude": 18.66910975,
         "longitude": 105.6691464,
         "fb": "https://www.facebook.com/slnafc",
-        "web": "http://www.slnafc.com/",
+        "web": "https://www.slnafc.com/",
         "league": "V.League 1"
       },
       {
@@ -635,7 +635,7 @@ var myData = [
         "latitude": 15.999305073490977,
         "longitude": 108.22353396968828,
         "fb": "https://www.facebook.com/shbdanang.official",
-        "web": "http://shbdanangfc.com.vn/",
+        "web": "https://shbdanangfc.com.vn/",
         "league": "V.League 1"
       },
       {
