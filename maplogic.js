@@ -11,12 +11,12 @@ function initialise() {
         }
     }
 
-    //Premier League only switch filter
-    if (document.URL.indexOf('premierleague') > -1) {
-        var bigleague = findGetParameter('premierleague');
+    //V.League 1 only switch filter
+    if (document.URL.indexOf('vleague1') > -1) {
+        var bigleague = findGetParameter('vleague1');
         if (bigleague == 'Yes') {
             myData = myData.filter(function(el) {
-                return el.league == 'Premier League';
+                return el.league == 'V.League 1';
             });
         }
     }
@@ -58,51 +58,35 @@ function initialise() {
     });
 
     // create the labeled tile layer with correct attribution
-    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {
+    var gsUrl = 'http://mt0.google.com/vt/lyrs=s&hl=vi&x={x}&y={y}&z={z}';
+    var gsAttrib = 'Map data &copy;2023 Google';
+    var gs = new L.TileLayer(gsUrl, {
         minZoom: 0.5,
         maxZoom: 20,
-        attribution: osmAttrib
+        attribution: gsAttrib
     });
 
-    // create the grayscale tile layer with correct attribution
-    var grayUrl =
-        'http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
-    var grayAttrib = 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ';
-    var gray = new L.TileLayer(grayUrl, {
+    var grUrl =
+        'http://mt0.google.com/vt/lyrs=r&hl=vi&x={x}&y={y}&z={z}';
+    var grAttrib = 'Map data &copy;2023 Google';
+    var gr = new L.TileLayer(grUrl, {
         minZoom: 0.5,
         maxZoom: 20,
-        attribution: grayAttrib
+        attribution: grAttrib
     });
 
-    // create the NASA Earth at Night tile layer with correct attribution
-    var NASAGIBS_ViirsEarthAtNight2012 = L.tileLayer(
-        'http://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}',
-        {
-            attribution:
-                'Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href="https://earthdata.nasa.gov">ESDIS</a>) with funding provided by NASA/HQ.',
-            bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
-            minZoom: 1,
-            maxZoom: 8,
-            format: 'jpg',
-            time: '',
-            tilematrixset: 'GoogleMapsCompatible_Level'
-        }
-    );
 
     // set the starting location and zoom of the map
-    myMap.setView(new L.LatLng(53.6642, -4.8), 6.2);
+	myMap.setView(new L.LatLng(14.2, 107.0), 6.25);  //Vietnam Maps
 
     //add different tilelayers to map.
     var baseMaps = {
-        Minimalist: gray,
-        Default: osm,
-        'Earth at Night': NASAGIBS_ViirsEarthAtNight2012
+		Default: gr,
+        Satellite: gs
     };
 
     //add tilelayers selection box to map
-    myMap.addLayer(osm);
+    myMap.addLayer(gr);
 
     //information box overlaid on map to show number of stadiums
     var info = L.control();
@@ -115,7 +99,7 @@ function initialise() {
 
     info.update = function() {
         if (myData.length > 0) {
-            this._div.innerHTML = '<h4>Number of Stadiums</h4>' + '<b>' + myData.length + '</b>';
+            this._div.innerHTML = '<h4>Number of Teams</h4>' + '<b>' + myData.length + '</b>';
         } else {
             this._div.innerHTML = '<h4>Number of Stadiums</h4>' + '<b>No Stadiums Found</b>';
         }
@@ -132,11 +116,10 @@ function initialise() {
     // the myData array has been imported in a separate <script> include.
     if (myData) {
         //set up counters for different leagues (used for Chart visualization)
-        var premierleaguecount = 0;
-        var scottishpremiershipcount = 0;
-        var eflchampionshipcount = 0;
-        var eflleagueonecount = 0;
-        var eflleaguetwocount = 0;
+        var vleague1count = 0;
+        var vleague2count = 0;
+        var seconddivisioncount = 0;
+        var thirddivisioncount = 0;
         var nationalteamcount = 0;
         var othercount = 0;
 
@@ -147,23 +130,22 @@ function initialise() {
             var team = myData[item].team; //stadium team affilication
             var logo = myData[item].logo; //team logo
             var league = myData[item].league; //team's league
+            var fb = myData[item].fb;
+            var web = myData[item].web;
 
             //switch statement to add to league counters based on value of item's team.
             switch (league) {
-                case 'Premier League':
-                    premierleaguecount++;
+                case 'V.League 1':
+                    vleague1count++;
                     break;
-                case 'Scottish Premiership':
-                    scottishpremiershipcount++;
+                case 'V.League 2':
+                    vleague2count++;
                     break;
-                case 'EFL Championship':
-                    eflchampionshipcount++;
+                case 'Second Division':
+                    seconddivisioncount++;
                     break;
-                case 'EFL League One':
-                    eflleagueonecount++;
-                    break;
-                case 'EFL League Two':
-                    eflleaguetwocount++;
+                case 'Third Division':
+                    thirddivisioncount++;
                     break;
                 case 'National':
                     nationalteamcount++;
@@ -182,6 +164,9 @@ function initialise() {
                 team +
                 '<br><b>Capacity:</b> ' +
                 myData[item].capacity +
+                '<br><b>Link:</b> ' +
+                '<a target="_blank" rel="noopener noreferrer" href=' + fb + '><img src="./Images/facebook.png" alt="fb" style="width:15px;height:15px;"></a>' + "  " +
+                '<a target="_blank" rel="noopener noreferrer" href=' + web + '><img src="./Images/world-wide-web.png" alt="fb" style="width:15px;height:15px;"></a>'
                 '</div>';
 
             //create and add markers and popups to map.
@@ -199,11 +184,10 @@ function initialise() {
             type: 'doughnut',
             data: {
                 labels: [
-                    'Premier League',
-                    'Scottish Premiership',
-                    'EFL Championship',
-                    'EFL League One',
-                    'EFL League Two',
+                    'V.League 1',
+                    'V.League 2',
+                    'Second Division',
+                    'Third Division',
                     'National Team',
                     'Other'
                 ],
@@ -211,11 +195,10 @@ function initialise() {
                     {
                         backgroundColor: ['#2ecc71', '#3498db', '#95a5a6', '#9b59b6', '#f1c40f', '#e74c3c', '#34495e'],
                         data: [
-                            premierleaguecount,
-                            scottishpremiershipcount,
-                            eflchampionshipcount,
-                            eflleagueonecount,
-                            eflleaguetwocount,
+                            vleague1count,
+                            vleague2count,
+                            seconddivisioncount,
+                            thirddivisioncount,
                             nationalteamcount,
                             othercount
                         ]
@@ -281,10 +264,10 @@ function initialise() {
         $('#flat-slider').slider({
             range: true,
             min: 0,
-            max: 90000,
+            max: 50000,
 
             //lowerbounds and upperbounds are set to the value they are given or to default minimum and maximum values.
-            values: [$('#lowerbounds').val() || 2000, $('#upperbounds').val() || 90000],
+            values: [$('#lowerbounds').val() || 2000, $('#upperbounds').val() || 50000],
             slide: function(event, ui) {
                 $('#amount').val(ui.values[0] + ' - ' + ui.values[1]);
                 // when the slider values change, update the hidden fields
@@ -295,25 +278,15 @@ function initialise() {
         $('#amount').val($('#flat-slider').slider('values', 0) + ' - ' + $('#flat-slider').slider('values', 1));
     });
 
-    //Pan in to London and back out functionality
+    //Back to original maps functionality
     var stateChangingButton = L.easyButton({
         states: [
-            {
-                stateName: 'zoom-to-london',
-                icon: 'fa-star',
-                title: 'zoom to london',
-                onClick: function(btn, map) {
-                    myMap.flyTo([51.39404, -0.23447], 10.100000001);
-                    btn.state('zoom-to-original'); // change state on click
-                }
-            },
             {
                 stateName: 'zoom-to-original',
                 icon: 'fa-undo',
                 title: 'zoom to original state',
                 onClick: function(btn, map) {
-                    map.flyTo([53.6642, -4.8], 6.2);
-                    btn.state('zoom-to-london');
+                    map.flyTo([14.2, 107.0], 6.25);
                 }
             }
         ]

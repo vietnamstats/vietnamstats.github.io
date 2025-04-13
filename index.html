@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Football Stadiums in the UK</title>
+    <title>Football Stadiums in Viet Nam</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1,width=device-width">
@@ -16,17 +16,25 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXN5ZNLTFW"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-EXN5ZNLTFW');
+    </script>
 </head>
 
 
 <body onload=initialise()>
 	
 	<header class="w3-container w3-row">
-    <h1>Visualizing Football Stadiums in the U.K</h1>
+    <h1>Visualizing Football Stadiums in Viet Nam</h1>
 	</header>
 
 	
-    <div id="mapid" class="w3-container w3-cell" data-step="1" data-intro="The goal of this page is to allow you to visually explore the location of football stadiums in the U.K. Click on stadium markers for more information on each stadium. For additional context, select a different background from the tiled box in the top right corner (under the Number of Stadiums counter). An especially interesting backdrop is the 'Earth at Night' view that shows the juxtaposition of crowded urban areas (well lit) against the density of stadiums located there." data-position="right"></div>
+    <div id="mapid" class="w3-container w3-cell" data-step="1" data-intro="The goal of this page is to allow you to visually explore the location of football stadiums in Viet Nam. Click on stadium markers for more information on each stadium. For additional context, select a different background from the tiled box in the top right corner (under the Number of Stadiums counter). An especially interesting backdrop is the 'Earth at Night' view that shows the juxtaposition of crowded urban areas (well lit) against the density of stadiums located there." data-position="right"></div>
 
 
 	 <div class="w3-container w3-cell">
@@ -55,40 +63,32 @@
 
                     <h4>Data and Image Sources</h4>
                     <ul>
-                        <li><a href="https://www.doogal.co.uk/FootballStadiums.php"> Primary Stadium Data </a>
+					
+                        <li><a href="https://vpf.vn"> Primary Stadium Data </a>
                         </li>
-                        <li><a href="https://en.wikipedia.org/wiki/List_of_football_stadiums_in_England"> Additional Stadium Data </a>
+                        <li>Stadium Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
                         </li>
-						<li><a href="http://www.bbc.co.uk/sport/football/tables"> League Data </a>
+                        <li>Search Icon made by <a href="https://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
                         </li>
-                        <li>Stadium Icons made by <a href="http://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                        <li>Facebook icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
                         </li>
-                        <li>Search Icon made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                        <li>Internet icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
                         </li>
-						<li> <a href = "http://images.adsttc.com/media/images/5012/520e/28ba/0d1b/4c00/0045/large_jpg/stringio.jpg?1414481878">Additional Image Credit</a>
-						</li>
                     </ul>
 
                     <h4>Additional Resources/Related Work</h4>
                     <ul>
-                        <li><a href="https://www.theguardian.com/football/2010/jan/13/stadiums-capacity-town-population-knowledge">Which stadiums have a capacity greater than their location's populations?</a>
-                        </li>
-                        <li><a href="http://www.stadiumguide.com/city-guides/london-football-guide/">The London Football Stadium Guide </a>
-                        </li>
-                        <li><a href="http://torontoist.com/2016/04/ranking-all-30-major-league-baseball-stadiums-by-walkability/">Ranking MLB Stadiums by walkability</a>
-                        </li>
-                        <li><a href="http://brillianttrains.com/football-stadiums/">Travel Time Isochron Maps To London Football Stadiums</a>
-                        </li>
+                        <li><a href="https://www.sidshekhar.com/mapping-football-stadiums/">Sid Shekhar / Football Stadium in the UK</a>
+                        </li> 
                     </ul>
                 </div>
 
                 <div class="modal-footer">
-                    <p>Page Last Updated: April 28, 2017</p>
+                    <p>Page Last Updated: April 12, 2025</p>
                 </div>
             </div>
         </div>
 		
-		 <button class="btn-class" onclick="window.location.href='./interpretation.html'">Data Insights</button>
     </div>
 	
 	
@@ -98,7 +98,7 @@
         <h2>Search By Team</h2>
         <form id="searchform">
         <label for="searchterm">
-            <input id="searchterm" type="search" name=teamsearch placeholder="Ex: Arsenal" autocomplete="on" class="search">
+            <input id="searchterm" type="search" name=teamsearch placeholder="Ex: Viettel" autocomplete="on" class="search">
         </label>
         <button type="submit" class="btn-class">Search</buttton>
         </form>
@@ -111,7 +111,7 @@
         <form>
 		<!--Hidden input fields to set the lower and upper ranges of the slider to send to the database.-->
 		<input type="hidden" name="lowerbounds" id="lowerbounds" value="0"/>
-		<input type="hidden" name="upperbounds" id="upperbounds" value="90000"/>
+		<input type="hidden" name="upperbounds" id="upperbounds" value="50000"/>
 	<p>
 	  <label for="amount">Capacity Range:</label>
 	  <input type="text" id="amount" readonly >
@@ -125,7 +125,7 @@
 
 	
 		<!--Chart to show percentage breakdown of markers currently on the map by professional football leagues -->
-	<div class="filter w3-card" data-step="4" data-intro="Have a look at the percentage of stadiums displayed that are in each of the professional leagues in the U.K. Filter or search on this page to see this chart dynamically adjust to reflect the stadiums displayed on the map." data-position="top">
+	<div class="filter w3-card" data-step="4" data-intro="Have a look at the percentage of stadiums displayed that are in each of the professional leagues in Viet Nam. Filter or search on this page to see this chart dynamically adjust to reflect the stadiums displayed on the map." data-position="top">
 	<h2>Breakdown by league</h2>
 	<canvas id="myChart"></canvas>
 	 </div>
@@ -133,19 +133,19 @@
 	
 	<!--This is a toggle switch to only show teams that are in the Premier League -->
     <div class="filter w3-card">
-        <h2> Team Toggle</h2> Flip the switches to <i>only</i> see stadiums that host Premier League or National Teams.
+        <h2> Team Toggle</h2> Flip the switches to <i>only</i> see stadiums that host V.League 1 or National Teams.
         <br>
         <br>
         <!-- Rounded switch, with the toggle kept checked if submitted-->
         <form>
 		<div class="w3-container w3-cell">
-        <label class="switch" data-step="5" data-intro="Simple toggle for those who want to quickly see the stadiums that house England's top flight - The Premier League." data-position="right">
-            <input type="checkbox" name=premierleague value="Yes">
+        <label class="switch" data-step="5" data-intro="Simple toggle for those who want to quickly see the stadiums that house Vietnam's top flight - V.League 1." data-position="right">
+            <input type="checkbox" name=vleague1 value="Yes">
             <span class="slider round"></span>
         </label>
 		</div>
         <div class="w3-container w3-cell">
-        <input type="submit" value="Premier League Only" class="btn-class">
+        <input type="submit" value="V.League 1 Only" class="btn-class">
 		</div>
         </form>
 		
