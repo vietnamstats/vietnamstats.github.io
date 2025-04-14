@@ -44,25 +44,30 @@ h4 {
     border: thin solid black;
 }
 
-@media only screen and (min-width: 20em) and (max-width: 47em) {
-    /* For mobile phones: */
+/* Mobile: full width, chiều cao vừa đủ */
+@media (max-width: 768px) {
     #mapid {
-        width: 97%;
-        height: 60%;
+      width: 100%;
+      height: 300px; /* hoặc 50vh (50% chiều cao màn hình) */
     }
-}
-
-@media screen and (min-width: 48em) {
+  }
+  
+  /* Tablet: chia layout với phần bên cạnh */
+  @media (min-width: 769px) and (max-width: 1199px) {
     #mapid {
-        height: 152%;
+      width: 65%;
+      height: 500px;
     }
-}
-
-@media screen and (min-width: 100em) {
+  }
+  
+  /* Desktop lớn trở lên */
+  @media (min-width: 1200px) {
     #mapid {
-        height: 114%;
+      width: 65%;
+      height: 600px;
     }
-}
+  }
+  
 
 /* Team Search styling */
 .search {
@@ -354,12 +359,6 @@ a:hover {
 
 /* Setting width of leaflet popup to accomodate team logos*/
 .leaflet-popup-content {
-    max-height: none !important;
-    height: auto !important;
-    overflow: visible !important;
+    width: auto;
 }
 
-.leaflet-popup-content-wrapper {
-    max-height: none !important;
-    overflow: visible !important;
-}
