@@ -355,4 +355,5 @@ a:hover {
 /* Setting width of leaflet popup to accomodate team logos*/
 .leaflet-popup-content {
     width: auto;
+    height: fit-content;
 }
