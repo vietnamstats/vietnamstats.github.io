@@ -44,30 +44,24 @@ h4 {
     border: thin solid black;
 }
 
-/* Mobile: full width, chiều cao vừa đủ */
-@media (max-width: 768px) {
+@media only screen and (min-width: 20em) and (max-width: 47em) {
+    /* For mobile phones: */
     #mapid {
-      width: 100%;
-      height: 300px; /* hoặc 50vh (50% chiều cao màn hình) */
+        height: 100%;
     }
-  }
-  
-  /* Tablet: chia layout với phần bên cạnh */
-  @media (min-width: 769px) and (max-width: 1199px) {
+}
+
+@media screen and (min-width: 48em) {
     #mapid {
-      width: 65%;
-      height: 500px;
+        height: 152%;
     }
-  }
-  
-  /* Desktop lớn trở lên */
-  @media (min-width: 1200px) {
+}
+
+@media screen and (min-width: 100em) {
     #mapid {
-      width: 65%;
-      height: 600px;
+        height: 114%;
     }
-  }
-  
+}
 
 /* Team Search styling */
 .search {
