@@ -47,7 +47,8 @@ h4 {
 @media only screen and (min-width: 20em) and (max-width: 47em) {
     /* For mobile phones: */
     #mapid {
-        height: 100%;
+        width: 97%;
+        height: 60%;
     }
 }
 
@@ -355,4 +356,3 @@ a:hover {
 .leaflet-popup-content {
     width: auto;
 }
-
