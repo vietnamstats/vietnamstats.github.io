@@ -121,6 +121,7 @@ function initialise() {
         var seconddivisioncount = 0;
         var thirddivisioncount = 0;
         var nationalteamcount = 0;
+        var womencount = 0;
         var othercount = 0;
 
         //here we iterate through the array
@@ -149,6 +150,9 @@ function initialise() {
                     break;
                 case 'National':
                     nationalteamcount++;
+                    break;
+                case 'Women\'s National League':
+                    womencount++;
                     break;
                 default:
                     othercount++;
@@ -189,17 +193,19 @@ function initialise() {
                     'Second Division',
                     'Third Division',
                     'National Team',
+                    'Women\'s National League',
                     'Other'
                 ],
                 datasets: [
                     {
-                        backgroundColor: ['#2ecc71', '#3498db', '#95a5a6', '#9b59b6', '#f1c40f', '#e74c3c', '#34495e'],
+                        backgroundColor: ['#2ecc71', '#3498db', '#95a5a6', '#9b59b6', '#f1c40f', '#ffc0cb' , '#e74c3c', '#34495e'],
                         data: [
                             vleague1count,
                             vleague2count,
                             seconddivisioncount,
                             thirddivisioncount,
                             nationalteamcount,
+                            womencount,
                             othercount
                         ]
                     }
