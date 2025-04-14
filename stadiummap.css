@@ -355,5 +355,14 @@ a:hover {
 /* Setting width of leaflet popup to accomodate team logos*/
 .leaflet-popup-content {
     width: auto;
-    height: fit-content;
+}
+
+.leaflet-popup-content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.leaflet-popup-content-wrapper {
+    max-height: none !important;
+    overflow-y: visible !important;
 }
