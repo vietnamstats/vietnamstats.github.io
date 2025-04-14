@@ -49,6 +49,19 @@ h4 {
     #mapid {
         width: 97%;
         height: 60%;
+    }   
+    h1 {
+        font-size: 20px;
+    }
+    .w3-container.w3-cell {
+        display: block;
+        width: 100%;
+    }
+    .w3-container.w3-cell:first-child img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
     }
 }
 

@@ -59,7 +59,7 @@ function initialise() {
 
     // create the labeled tile layer with correct attribution
     var gsUrl = 'https://mt0.google.com/vt/lyrs=s&hl=vi&x={x}&y={y}&z={z}';
-    var gsAttrib = 'Map data &copy;2023 Google';
+    var gsAttrib = 'Map data &copy;2025 Google';
     var gs = new L.TileLayer(gsUrl, {
         minZoom: 0.5,
         maxZoom: 20,
@@ -68,7 +68,7 @@ function initialise() {
 
     var grUrl =
         'https://mt0.google.com/vt/lyrs=r&hl=vi&x={x}&y={y}&z={z}';
-    var grAttrib = 'Map data &copy;2023 Google';
+    var grAttrib = 'Map data &copy;2025 Google';
     var gr = new L.TileLayer(grUrl, {
         minZoom: 0.5,
         maxZoom: 20,
@@ -170,7 +170,7 @@ function initialise() {
                 myData[item].capacity +
                 '<br><b>Link:</b> ' +
                 '<a target="_blank" rel="noopener noreferrer" href=' + fb + '><img src="./Images/facebook.png" alt="fb" style="width:15px;height:15px;"></a>' + "  " +
-                '<a target="_blank" rel="noopener noreferrer" href=' + web + '><img src="./Images/world-wide-web.png" alt="fb" style="width:15px;height:15px;"></a>'
+                '<a target="_blank" rel="noopener noreferrer" href=' + web + '><img src="./Images/world-wide-web.png" alt="fb" style="width:15px;height:15px;"></a>' +
                 '</div>';
 
             //create and add markers and popups to map.
