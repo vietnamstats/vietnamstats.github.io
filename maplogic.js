@@ -21,6 +21,16 @@ function initialise() {
         }
     }
 
+    //Women's National League only switch filter
+    if (document.URL.indexOf('women') > -1) {
+        var bigleague = findGetParameter('women');
+        if (bigleague == 'Yes') {
+            myData = myData.filter(function(el) {
+                return el.league == 'Women\'s National League';
+            });
+        }
+    }
+
     //National Teams only switch filter
     if (document.URL.indexOf('nationalteams') > -1) {
         var bigleague = findGetParameter('nationalteams');

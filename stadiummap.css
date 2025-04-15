@@ -53,7 +53,7 @@ h4 {
     h1 {
         font-size: 20px;
     }
-    .w3-container.w3-cell {
+    .w3-container.w3-cell:first-child {
         display: block;
         width: 100%;
     }

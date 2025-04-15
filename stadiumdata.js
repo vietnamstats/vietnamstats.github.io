@@ -814,7 +814,7 @@ var myData = [
         "capacity": 30000,
         "latitude": 20.852058201527925,
         "longitude": 106.68889632463711,
-        "fb": "#",
+        "fb": "https://www.facebook.com/haiphongfootballclub",
         "web": "#",
         "league": "V.League 1"
       },
